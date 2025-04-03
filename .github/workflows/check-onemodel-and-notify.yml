@@ -1,0 +1,31 @@
+name: Check One Model and Notify
+
+on:
+  schedule:
+    - cron: 0 9-18 * * 1-5'  # Runs M-F 9am-6pm
+  workflow_dispatch:     # Allow manual runs
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run script
+        run: python one_model_update.py.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data.csv
+          git commit -m "Update data" || echo "No changes"
+          git push
