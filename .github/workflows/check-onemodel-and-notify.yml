@@ -2,8 +2,11 @@ name: Check One Model and Notify
 
 on:
   schedule:
-    - cron: 0 9-18 * * 1-5  # Runs M-F 9am-6pm
+    - cron: 0 13-22 * * 1-5  # Runs M-F 9am-6pm (actions is in UTC)
   workflow_dispatch:     # Allow manual runs
+
+permissions:
+  contents: write  # 👈 this is what gives it permission to push
 
 jobs:
   scrape:
