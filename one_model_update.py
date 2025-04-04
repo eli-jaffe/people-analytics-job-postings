@@ -13,10 +13,13 @@ URL = "https://www.onemodel.co/roles-in-people-analytics-hr-technology"
 # LAST_UPDATE_FILE = "last_update.txt"
 # LOG_FILE = "update_log.txt"
 
-STORAGE_DIR = "job-search/"
-LAST_DATE_FILE = os.path.join(STORAGE_DIR, "last_update_date.txt")
-LAST_HASH_FILE = os.path.join(STORAGE_DIR, "last_data_hash.txt")
-COMBINED_CSV_FILE = os.path.join(STORAGE_DIR, "latest_combined.csv")
+STORAGE_DIR = "."
+# LAST_DATE_FILE = os.path.join(STORAGE_DIR, "last_update_date.txt")
+LAST_DATE_FILE = "last_update_date.txt"
+# LAST_HASH_FILE = os.path.join(STORAGE_DIR, "last_data_hash.txt")
+LAST_HASH_FILE = last_data_hash.txt"
+# COMBINED_CSV_FILE = os.path.join(STORAGE_DIR, "latest_combined.csv")
+COMBINED_CSV_FILE = "latest_combined.csv"
 EMAIL_NOTIFICATION = True  # Change to True if you want email alerts
 
 # Email settings (if EMAIL_NOTIFICATION is True)
