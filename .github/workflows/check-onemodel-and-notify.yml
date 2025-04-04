@@ -2,7 +2,7 @@ name: Check One Model and Notify
 
 on:
   schedule:
-    - cron: 0 9-18 * * 1-5'  # Runs M-F 9am-6pm
+    - cron: 0 9-18 * * 1-5  # Runs M-F 9am-6pm
   workflow_dispatch:     # Allow manual runs
 
 jobs:
