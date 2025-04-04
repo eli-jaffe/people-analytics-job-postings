@@ -20,12 +20,15 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run script
-        run: python one_model_update.py.py
+        env:
+          GMAIL_USERNAME: ${{ secrets.GMAIL_USERNAME }}
+          GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
+        run: python one_model_update.py
 
       - name: Commit changes
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add data.csv
+          git add job-search/
           git commit -m "Update data" || echo "No changes"
           git push
