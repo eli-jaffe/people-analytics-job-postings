@@ -19,7 +19,7 @@ EMAIL_NOTIFICATION = True  # Change to True if you want email alerts
 
 # Email settings (if EMAIL_NOTIFICATION is True)
 EMAIL_SENDER = os.getenv("GMAIL_USERNAME")  # Enter your address
-EMAIL_RECEIVER = "eli.jaffe@nyu.edu"  # Enter receiver address
+EMAIL_RECEIVER = os.getenv("RECEIVER_ADDRESS")  # Enter receiver address
 EMAIL_SUBJECT = "OneModel Page Updated"
 EMAIL_PASSWORD = os.getenv("GMAIL_PASSWORD")
 SMTP_SERVER = "smtp.gmail.com"
