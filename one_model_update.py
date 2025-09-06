@@ -10,15 +10,10 @@ import hashlib
 
 # === CONFIGURATION ===
 URL = "https://www.onemodel.co/roles-in-people-analytics-hr-technology"
-# LAST_UPDATE_FILE = "last_update.txt"
-# LOG_FILE = "update_log.txt"
 
 STORAGE_DIR = "."
-# LAST_DATE_FILE = os.path.join(STORAGE_DIR, "last_update_date.txt")
 LAST_DATE_FILE = "last_update_date.txt"
-# LAST_HASH_FILE = os.path.join(STORAGE_DIR, "last_data_hash.txt")
 LAST_HASH_FILE = "last_data_hash.txt"
-# COMBINED_CSV_FILE = os.path.join(STORAGE_DIR, "latest_combined.csv")
 COMBINED_CSV_FILE = "latest_combined.csv"
 EMAIL_NOTIFICATION = True  # Change to True if you want email alerts
 
@@ -32,8 +27,6 @@ SMTP_PORT = 587
 
 
 def fetch_update_date(soup):
-    # response = requests.get(url)
-    # soup = BeautifulSoup(response.text, 'html.parser')
 
     match = re.search(r"Last update:\s*(\d{1,2}/\d{1,2}/\d{2})", soup.text)
     # match = re.search(r'update: (\d{1,2}+ \d{1,2}, \d{4})', soup.text)
@@ -68,8 +61,6 @@ def extract_and_combine_tables(soup):
         except Exception as e:
             print(f"⚠️ Failed to parse table {i+1}: {e}")
 
-    # if combined_rows:
-    #     return pd.concat(combined_rows, ignore_index=True)
     return data
 
 
@@ -128,7 +119,6 @@ def main():
     print("🔍 Checking OneModel roles page...")
     response = requests.get(URL)
     soup = BeautifulSoup(response.text, "html.parser")
-    # page_text = soup.get_text()
 
     latest_update_date = fetch_update_date(soup)
     combined_df = extract_and_combine_tables(soup)
