@@ -25,6 +25,8 @@ EMAIL_PASSWORD = os.getenv("GMAIL_PASSWORD")
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 
+print(EMAIL_SENDER)
+print(EMAIL_RECEIVER)
 
 def fetch_update_date(soup):
 
