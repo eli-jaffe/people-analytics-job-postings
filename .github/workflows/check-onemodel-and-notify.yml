@@ -2,8 +2,8 @@ name: Check One Model and Notify
 
 on:
   schedule:
-    # - cron: 0 13-22 * * 1-5  # Runs M-F 9am-6pm (actions is in UTC)
-    - cron: 0 13 * * 1-5  # Set to Runs M-F 9am (actions is in UTC) until fix
+    - cron: 0 13-22 * * 1-5  # Runs M-F 9am-6pm (actions is in UTC)
+    # - cron: 0 13 * * 1-5  # Set to Runs M-F 9am (actions is in UTC) until fix
   workflow_dispatch:     # Allow manual runs
 
 permissions:
