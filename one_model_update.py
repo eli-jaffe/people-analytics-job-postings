@@ -104,10 +104,6 @@ def send_email_alert(message_body):
     msg["From"] = EMAIL_SENDER
     msg["To"] = EMAIL_RECEIVER
 
-    print(f'Email sender: {EMAIL_SENDER}')
-    print(f'Email receiver: {EMAIL_RECEIVER}')
-
-
     with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
         server.starttls()
         server.login(EMAIL_SENDER, EMAIL_PASSWORD)
