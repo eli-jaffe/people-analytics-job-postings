@@ -25,8 +25,6 @@ EMAIL_PASSWORD = os.getenv("GMAIL_PASSWORD")
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 
-print(EMAIL_SENDER)
-print(EMAIL_RECEIVER)
 
 def fetch_update_date(soup):
 
@@ -105,6 +103,10 @@ def send_email_alert(message_body):
     msg["Subject"] = "📊 OneModel Page Update Detected"
     msg["From"] = EMAIL_SENDER
     msg["To"] = EMAIL_RECEIVER
+
+    print(EMAIL_SENDER)
+    print(EMAIL_RECEIVER)
+
 
     with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
         server.starttls()
