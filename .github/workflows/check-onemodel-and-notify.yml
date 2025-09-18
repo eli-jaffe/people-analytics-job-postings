@@ -27,6 +27,7 @@ jobs:
         env:
           GMAIL_USERNAME: ${{ secrets.GMAIL_USERNAME }}
           GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
+          RECEIVER_ADDRESS: ${{ secrets.RECEIVER_ADDRESS }}
         run: python one_model_update.py
 
       - name: Commit changes
